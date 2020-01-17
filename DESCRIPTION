@@ -12,3 +12,10 @@ Description: Collection of utility functions and data to be used in the
 License: AGPL-3
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    curatedTCGAData,
+    TCGAutils,
+    magrittr,
+    dplyr,
+    rlang
+RoxygenNote: 7.0.2
