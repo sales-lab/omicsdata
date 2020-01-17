@@ -1,0 +1,14 @@
+Package: omicsdata
+Title: Support package for the "Omics Data" course
+Version: 0.1.0
+Authors@R: 
+    person(given = "Gabriele",
+           family = "Sales",
+           role = c("aut", "cre"),
+           email = "gabriele.sales@unipd.it",
+           comment = c(ORCID = "0000-0003-2078-5661"))
+Description: Collection of utility functions and data to be used in the
+    "Omics Data" course for the Molecular Genetics degree.
+License: AGPL-3
+Encoding: UTF-8
+LazyData: true
