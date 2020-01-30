@@ -17,5 +17,9 @@ Imports:
     TCGAutils,
     magrittr,
     dplyr,
-    rlang
+    rlang,
+    SummarizedExperiment,
+    MultiAssayExperiment,
+    purrr,
+    glue
 RoxygenNote: 7.0.2

@@ -1,6 +1,12 @@
-#' @importFrom dplyr select
+#' @importFrom curatedTCGAData curatedTCGAData
+#' @importFrom dplyr as_tibble filter select
+#' @importFrom glue glue
 #' @importFrom magrittr %>%
-#' @importFrom rlang .data
+#' @importFrom MultiAssayExperiment colData mergeReplicates sampleMap
+#' @importFrom purrr safely
+#' @importFrom rlang .data abort
+#' @importFrom SummarizedExperiment assays
+#' @importFrom TCGAutils splitAssays
 NULL
 
 #' Package development tools for R.
