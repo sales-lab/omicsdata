@@ -41,10 +41,8 @@ gdc_download <- function(disease, dest_dir, type) {
 }
 
 harmonize_datasets <- function(datasets, assays) {
-  print(datasets)
-
   samples <- sort(colnames(datasets[[1]]))
-  meta <- sort(colnames(colData(datasets[[1]])))
+  meta <- colnames(colData(datasets[[1]]))
   template <- NULL
   selected_assays <- list()
 
