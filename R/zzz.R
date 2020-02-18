@@ -1,12 +1,10 @@
-#' @importFrom curatedTCGAData curatedTCGAData
-#' @importFrom dplyr as_tibble filter select
+#' @importFrom dplyr as_tibble select
 #' @importFrom glue glue
 #' @importFrom magrittr %>%
-#' @importFrom MultiAssayExperiment colData mergeReplicates sampleMap
-#' @importFrom purrr safely
 #' @importFrom rlang .data abort
-#' @importFrom SummarizedExperiment assays
-#' @importFrom TCGAutils splitAssays
+#' @importFrom SummarizedExperiment assay assays assayNames assays<- colData
+#'             colData<- rowData rowData<-
+#' @importFrom TCGAbiolinks GDCquery GDCdownload GDCprepare
 NULL
 
 #' Package development tools for R.

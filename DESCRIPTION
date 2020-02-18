@@ -1,6 +1,6 @@
 Package: omicsdata
 Title: Support package for the "Omics Data" course
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person(given = "Gabriele",
            family = "Sales",
@@ -12,16 +12,15 @@ Description: Collection of utility functions and data to be used in the
 License: AGPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: 
-    curatedTCGAData,
-    TCGAutils,
-    magrittr,
+Imports:
     dplyr,
+    magrittr,
     rlang,
     SummarizedExperiment,
-    MultiAssayExperiment,
-    purrr,
-    glue
+    glue,
+    TCGAbiolinks,
+    rappdirs,
+    TCGAutils
 RoxygenNote: 7.0.2
 Suggests:
     testthat (>= 2.1.0)

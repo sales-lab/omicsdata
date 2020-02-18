@@ -7,7 +7,10 @@
 fetch_tcga_dataset(disease)
 }
 \arguments{
-\item{disease}{A disease code. See \code{\link{list_diseases}}.}
+\item{disease}{A disease abbreviation. See \code{\link{list_diseases}}.}
+}
+\value{
+A \code{\link{RangedSummarizedExperiment}} instance.
 }
 \description{
 Retrieve gene expression datasets for a disease.
