@@ -92,3 +92,16 @@ simplify_rowdata <- function(se) {
   rownames(se) <- dat[, "gene_id"]
   se
 }
+
+
+#' Delete cached data about TCGA datasets.
+#'
+#' @export
+#'
+purge_dataset_cache <- function() {
+  base <- rappdirs::user_cache_dir("omicsdata")
+  entries <- list.files(base)
+  for (entry in entries) {
+    unlink(file.path(base, entry), recursive = TRUE)
+  }
+}
