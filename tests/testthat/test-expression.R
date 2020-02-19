@@ -2,10 +2,10 @@ context("Filter for most variable profiles")
 
 test_that("the most variable profiles are selected", {
   profs <- rbind(
-    rnorm(100, 6, 1),
-    rnorm(100, -10, 2),
-    rnorm(100, 7, 2),
-    rep.int(10, 100)
+    rnorm(100, 105, 1),
+    rnorm(100, -110, 2),
+    rnorm(100, 107, 2),
+    rep.int(101, 100)
   )
   rownames(profs) <- c("A", "B", "C", "D")
 
@@ -16,9 +16,9 @@ test_that("the most variable profiles are selected", {
 
 test_that("low profiles are ignored", {
   profs <- rbind(
-    rep.int(3, 100),
-    rnorm(100, 1, 0.01),
-    rnorm(100, 2, 30)
+    rep.int(95, 100),
+    rnorm(100, 50, 0.01),
+    rnorm(100, 97, 30)
   )
 
   expect_error(most_variable_profiles(profs),

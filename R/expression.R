@@ -1,13 +1,15 @@
 #' Select the most abundant profiles from an expression matrix.
 #'
 #' @param expression The expression matrix.
-#' @param n The number of profiles to select (100, by default).
+#' @param n The number of profiles to select.
+#' @param cut_mean If the mean expression in a profile is lower than this value,
+#'                 ignore the entire profile.
 #' @return A selection of rows from the input matrix.
 #'
 #' @export
 #'
-most_variable_profiles <- function(expression, n = 100L) {
-  present <- rowMeans(expression) > 5
+most_variable_profiles <- function(expression, n = 100L, cut_mean = 100) {
+  present <- rowMeans(expression) >= cut_mean
   if (sum(present) == 0) {
     abort("expression levels are too low for this filter to work",
           class = "omicsdata_levels_too_low")

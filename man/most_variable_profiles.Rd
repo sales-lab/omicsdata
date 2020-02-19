@@ -4,12 +4,15 @@
 \alias{most_variable_profiles}
 \title{Select the most abundant profiles from an expression matrix.}
 \usage{
-most_variable_profiles(expression, n = 100L)
+most_variable_profiles(expression, n = 100L, cut_mean = 100)
 }
 \arguments{
 \item{expression}{The expression matrix.}
 
-\item{n}{The number of profiles to select (100, by default).}
+\item{n}{The number of profiles to select.}
+
+\item{cut_mean}{If the mean expression in a profile is lower than this value,
+ignore the entire profile.}
 }
 \value{
 A selection of rows from the input matrix.
