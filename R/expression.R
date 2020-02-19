@@ -36,3 +36,15 @@ sequencing_depth <- function(counts) {
   tibble(sample = colnames(counts),
          depth = colSums(counts))
 }
+
+
+#' Normalize expression profiles by sequencing depth.
+#'
+#' @param counts The raw count matrix.
+#' @return Trasformed counts.
+#'
+#' @export
+#'
+normalize_by_depth <- function(counts) {
+  t(t(counts) / colSums(counts)) * 1e6
+}

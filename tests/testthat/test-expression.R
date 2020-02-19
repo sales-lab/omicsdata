@@ -26,7 +26,7 @@ test_that("low profiles are ignored", {
 })
 
 
-context("Sequencing Depth")
+context("Sequencing depth")
 
 test_that("depth is labeled with sample names", {
   counts <- cbind(
@@ -40,4 +40,21 @@ test_that("depth is labeled with sample names", {
   expect_s3_class(sd, "tbl_df")
   expect_identical(sd$sample, colnames(counts))
   expect_equivalent(sd$depth, c(10, 20, 30))
+})
+
+
+context("Depth normalization")
+
+test_that("raw counts are normalized by sequencin depth", {
+  counts <- cbind(
+    rep.int(1, 10),
+    rep.int(2, 10),
+    rep.int(3, 10)
+  )
+  colnames(counts) <- c("A", "B", "C")
+
+  nc <- normalize_by_depth(counts)
+  expect_is(nc, "matrix")
+  expect_identical(colnames(nc), colnames(counts))
+  expect_equivalent(colSums(nc), rep.int(1e6, 3))
 })
