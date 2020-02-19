@@ -2,6 +2,7 @@
 
 export(fetch_tcga_dataset)
 export(list_diseases)
+export(most_variable_profiles)
 export(purge_dataset_cache)
 importFrom(SummarizedExperiment,"assays<-")
 importFrom(SummarizedExperiment,"colData<-")

@@ -1,6 +1,6 @@
 Package: omicsdata
 Title: Support package for the "Omics Data" course
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: 
     person(given = "Gabriele",
            family = "Sales",
@@ -20,7 +20,9 @@ Imports:
     glue,
     TCGAbiolinks,
     rappdirs,
-    TCGAutils
+    TCGAutils,
+    stats,
+    utils
 RoxygenNote: 7.0.2
 Suggests:
     testthat (>= 2.1.0)
