@@ -1,3 +1,5 @@
+context("List of diseases")
+
 test_that("list_diseases returns a two-column tibble", {
   x <- list_diseases()
   expect_s3_class(x, "tbl_df")

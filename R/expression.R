@@ -7,7 +7,13 @@
 #' @export
 #'
 most_variable_profiles <- function(expression, n = 100L) {
-  sel <- expression %>%
+  present <- rowMeans(expression) > 5
+  if (sum(present) == 0) {
+    abort("expression levels are too low for this filter to work",
+          class = "omicsdata_levels_too_low")
+  }
+
+  sel <- expression[present, ] %>%
     apply(1, function(profile) stats::sd(profile) / mean(profile)) %>%
     sort(decreasing = TRUE) %>%
     utils::head(n = n) %>%
