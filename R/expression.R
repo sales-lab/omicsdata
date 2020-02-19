@@ -15,7 +15,7 @@ most_variable_profiles <- function(expression, n = 100L, cut_mean = 100) {
           class = "omicsdata_levels_too_low")
   }
 
-  sel <- expression[present, ] %>%
+  sel <- expression[present, , drop = FALSE] %>%
     apply(1, function(profile) stats::sd(profile) / mean(profile)) %>%
     sort(decreasing = TRUE) %>%
     utils::head(n = n) %>%
