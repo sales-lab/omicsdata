@@ -23,3 +23,15 @@ most_variable_profiles <- function(expression, n = 100L, cut_mean = 100) {
 
   expression[sel, , drop = FALSE]
 }
+
+
+#' Compute the per-sample sequencing depth.
+#'
+#' @param counts The count matrix.
+#' @return An integer vector, holding the sequencing depth for each sample.
+#'
+#' @export
+#'
+sequencing_depth <- function(counts) {
+  colSums(counts)
+}

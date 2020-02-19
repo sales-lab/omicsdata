@@ -24,3 +24,20 @@ test_that("low profiles are ignored", {
   expect_error(most_variable_profiles(profs),
                class = "omicsdata_levels_too_low")
 })
+
+
+context("Sequencing Depth")
+
+test_that("depth is labeled with sample names", {
+  counts <- cbind(
+    rep.int(1, 10),
+    rep.int(2, 10),
+    rep.int(3, 10)
+  )
+  colnames(counts) <- c("A", "B", "C")
+
+  depth <- sequencing_depth(counts)
+  expect_vector(depth, size = 3)
+  expect_named(depth, colnames(counts))
+  expect_equivalent(depth, c(10, 20, 30))
+})
