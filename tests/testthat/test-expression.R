@@ -58,3 +58,52 @@ test_that("raw counts are normalized by sequencin depth", {
   expect_identical(colnames(nc), colnames(counts))
   expect_equivalent(colSums(nc), rep.int(1e6, 3))
 })
+
+
+context("Expression medians")
+
+test_that("gene medians are computed correctly", {
+  counts <- rbind(
+    1:3,
+    2:4,
+    4:6
+  )
+  rownames(counts) <- c("A", "B", "C")
+
+  ms <- gene_medians(counts)
+  expect_identical(names(ms), rownames(counts))
+  expect_equivalent(ms, c(2, 3, 5))
+})
+
+
+context("Gene deviations")
+
+test_that("gene deviations are computed correctly", {
+  counts <- rbind(
+    1:3,
+    2:4,
+    4:6
+  )
+  colnames(counts) <- c("S", "T", "U")
+  rownames(counts) <- c("A", "B", "C")
+
+  refs <- setNames(c(2, 3, 0), rownames(counts))
+
+  ds <- gene_deviations(counts, refs)
+  expect_is(ds, "data.frame")
+  expect_named(ds, c("sample", "deviation"))
+  expect_identical(as.character(unique(ds$sample)), unique(colnames(counts)))
+})
+
+test_that("mismatched reference levels are rejected", {
+  counts <- rbind(
+    1:3,
+    2:4,
+    4:6
+  )
+  rownames(counts) <- c("A", "B", "C")
+
+  refs <- setNames(1:3, c("S", "T", "U"))
+
+  testthat::expect_error(gene_deviations(counts, refs))
+})

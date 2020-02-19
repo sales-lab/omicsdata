@@ -48,3 +48,37 @@ sequencing_depth <- function(counts) {
 normalize_by_depth <- function(counts) {
   t(t(counts) / colSums(counts)) * 1e6
 }
+
+
+#' Compute median expression levels for all genes.
+#'
+#' @param expr The expression matrix.
+#' @return A named vector with gene medians.
+#'
+#' @export
+#'
+gene_medians <- function(expr) {
+  setNames(matrixStats::rowMedians(expr), rownames(expr))
+}
+
+
+#' Compute deviations of gene expression for reference levels.
+#'
+#' @param expr The expression matrix.
+#' @param reference_levels A vector with a reference level for each gene.
+#' @return A table of deviations, with columns \code{sample} and
+#'         \code{deviation}.
+#'
+#' @export
+#'
+gene_deviations <- function(expr, reference_levels) {
+  assert_that(are_equal(rownames(expr), names(reference_levels)))
+
+  for (i in seq_len(nrow(expr))) {
+    expr[i, ] <- expr[i, ] - reference_levels[[i]]
+  }
+
+  as.data.frame(expr) %>%
+    utils::stack() %>%
+    select(sample = .data$ind, deviation = .data$values)
+}
