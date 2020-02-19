@@ -16,9 +16,9 @@ test_that("the most variable profiles are selected", {
 
 test_that("low profiles are ignored", {
   profs <- rbind(
-    rep.int(95, 100),
+    rep.int(90, 100),
     rnorm(100, 50, 0.01),
-    rnorm(100, 97, 30)
+    rnorm(100, 90, 30)
   )
 
   expect_error(most_variable_profiles(profs),
@@ -36,8 +36,8 @@ test_that("depth is labeled with sample names", {
   )
   colnames(counts) <- c("A", "B", "C")
 
-  depth <- sequencing_depth(counts)
-  expect_vector(depth, size = 3)
-  expect_named(depth, colnames(counts))
-  expect_equivalent(depth, c(10, 20, 30))
+  sd <- sequencing_depth(counts)
+  expect_s3_class(sd, "tbl_df")
+  expect_identical(sd$sample, colnames(counts))
+  expect_equivalent(sd$depth, c(10, 20, 30))
 })

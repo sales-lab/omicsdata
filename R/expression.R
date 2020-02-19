@@ -33,5 +33,6 @@ most_variable_profiles <- function(expression, n = 100L, cut_mean = 100) {
 #' @export
 #'
 sequencing_depth <- function(counts) {
-  colSums(counts)
+  tibble(sample = colnames(counts),
+         depth = colSums(counts))
 }

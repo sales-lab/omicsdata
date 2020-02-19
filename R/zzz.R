@@ -5,6 +5,7 @@
 #' @importFrom SummarizedExperiment assay assays assayNames assays<- colData
 #'             colData<- rowData rowData<-
 #' @importFrom TCGAbiolinks GDCquery GDCdownload GDCprepare
+#' @importFrom tibble tibble
 NULL
 
 #' Package development tools for R.
