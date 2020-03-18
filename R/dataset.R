@@ -27,12 +27,22 @@ fetch_tcga_dataset <- function(disease) {
 }
 
 gdc_download <- function(disease, dest_dir, type) {
+  # Workaround for non-uniform sample.type labels.
+  res <- try(gdc_download2(disease, dest_dir, "Primary solid Tumor", type))
+  if (inherits(res, "try-error")) {
+    gdc_download2(disease, dest_dir, "Primary Tumor", type)
+  } else {
+    return(res)
+  }
+}
+
+gdc_download2 <- function(disease, dest_dir, sample_type, file_type) {
   query <- GDCquery(
     project = glue("TCGA-", disease),
     data.category = "Gene expression",
     data.type = "Gene expression quantification",
-    sample.type = "Primary solid Tumor",
-    file.type = type,
+    sample.type = sample_type,
+    file.type = file_type,
     legacy = TRUE
   )
 

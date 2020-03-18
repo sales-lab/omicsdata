@@ -1,7 +1,7 @@
 Package: omicsdata
 Title: Support package for the "Omics Data" course
-Version: 0.4.0
-Authors@R: 
+Version: 0.4.1
+Authors@R:
     person(given = "Gabriele",
            family = "Sales",
            role = c("aut", "cre"),
