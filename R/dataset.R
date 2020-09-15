@@ -47,7 +47,15 @@ gdc_download2 <- function(disease, dest_dir, sample_type, file_type) {
   )
 
   GDCdownload(query, directory = dest_dir)
-  GDCprepare(query, directory = dest_dir)
+  GDCprepare(remove_duplicates(query), directory = dest_dir)
+}
+
+remove_duplicates <- function(query) {
+  results <- query$results[[1]]
+  results <- results[which(!duplicated(results$cases)), ]
+
+  query$results[[1]] <- results
+  return(query)
 }
 
 harmonize_datasets <- function(datasets, assays) {
