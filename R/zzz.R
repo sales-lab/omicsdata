@@ -1,5 +1,5 @@
 #' @importFrom assertthat assert_that are_equal
-#' @importFrom dplyr as_tibble select
+#' @importFrom dplyr as_tibble select filter
 #' @importFrom glue glue
 #' @importFrom magrittr %>%
 #' @importFrom rlang .data abort

@@ -8,5 +8,6 @@ list_diseases <- function() {
     select(
       abbreviation = .data$Study.Abbreviation,
       description = .data$Study.Name
-    )
+    ) %>%
+    filter(!(.data$abbreviation %in% c("CNTL", "FPPP", "MISC")))
 }
