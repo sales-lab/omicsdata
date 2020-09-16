@@ -45,6 +45,8 @@ gdc_download2 <- function(disease, dest_dir, sample_type, file_type) {
     file.type = file_type,
     legacy = TRUE
   )
+  if (is.null(query))
+    abort(glue("no gene expression data for disease: {disease}"))
 
   GDCdownload(query, directory = dest_dir)
   GDCprepare(remove_duplicates(query), directory = dest_dir)
