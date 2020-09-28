@@ -10,9 +10,9 @@
 #' @importFrom tibble tibble
 NULL
 
-#' Package development tools for R.
+#' Support package for the "Omics Data" course.
 #'
-#' More details on the course at \url{https://sales.bio.unipd.it/teaching.html}
+#' More details on the course at \url{https://sales.bio.unipd.it/datiomici.html}
 #'
 #' @docType package
 #' @name omicsdata

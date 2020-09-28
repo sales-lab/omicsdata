@@ -4,9 +4,9 @@
 \name{omicsdata}
 \alias{omicsdata}
 \alias{omicsdata-package}
-\title{Package development tools for R.}
+\title{Support package for the "Omics Data" course.}
 \description{
-More details on the course at \url{https://sales.bio.unipd.it/teaching.html}
+More details on the course at \url{https://sales.bio.unipd.it/datiomici.html}
 }
 \author{
 \strong{Maintainer}: Gabriele Sales \email{gabriele.sales@unipd.it} (\href{https://orcid.org/0000-0003-2078-5661}{ORCID})
