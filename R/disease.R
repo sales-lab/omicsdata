@@ -1,5 +1,10 @@
 #' Retrieve information about diseases.
 #'
+#' @return A data.frame containing disease abbreviations and descriptions.
+#'
+#' @examples
+#' dplyr::filter(list_diseases(), abbreviation == "LUAD")
+#'
 #' @export
 #'
 list_diseases <- function() {

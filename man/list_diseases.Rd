@@ -6,6 +6,13 @@
 \usage{
 list_diseases()
 }
+\value{
+A data.frame containing disease abbreviations and descriptions.
+}
 \description{
 Retrieve information about diseases.
+}
+\examples{
+ dplyr::filter(list_diseases(), abbreviation == "LUAD")
+
 }
