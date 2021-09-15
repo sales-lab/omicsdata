@@ -6,7 +6,8 @@
 \alias{omicsdata-package}
 \title{Support package for the "Omics Data" course.}
 \description{
-More details on the course at \url{https://sales.bio.unipd.it/datiomici.html}
+Collection of utility functions and data to be used in the
+    "Omics Data" course.
 }
 \author{
 \strong{Maintainer}: Gabriele Sales \email{gabriele.sales@unipd.it} (\href{https://orcid.org/0000-0003-2078-5661}{ORCID})

@@ -12,8 +12,6 @@ NULL
 
 #' Support package for the "Omics Data" course.
 #'
-#' More details on the course at \url{https://sales.bio.unipd.it/datiomici.html}
-#'
 #' @docType package
 #' @name omicsdata
 "_PACKAGE"
