@@ -3,11 +3,13 @@
 #' @export
 #'
 list_diseases <- function() {
-  TCGAutils::diseaseCodes %>%
-    as_tibble() %>%
+  url <- "https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations"
+  rvest::read_html(url) %>%
+    rvest::html_element("#main-wrapper table") %>%
+    rvest::html_table() %>%
     select(
-      abbreviation = .data$Study.Abbreviation,
-      description = .data$Study.Name
+      abbreviation = .data$`Study Abbreviation`,
+      description = .data$`Study Name`
     ) %>%
     filter(!(.data$abbreviation %in% c("CNTL", "FPPP", "MISC")))
 }

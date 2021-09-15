@@ -1,6 +1,6 @@
 Package: omicsdata
 Title: Support package for the "Omics Data" course
-Version: 0.4.3
+Version: 0.5.0
 Authors@R:
     person(given = "Gabriele",
            family = "Sales",
@@ -20,12 +20,13 @@ Imports:
     glue,
     TCGAbiolinks,
     rappdirs,
-    TCGAutils,
     stats,
     utils,
     tibble,
     matrixStats,
-    assertthat
-RoxygenNote: 7.1.1
+    assertthat,
+    rvest
+biocViews: Homo_sapiens_Data, ReproducibleResearch, CancerData, ExpressionData
+RoxygenNote: 7.1.2
 Suggests:
     testthat (>= 2.1.0)
