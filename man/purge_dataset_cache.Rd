@@ -6,6 +6,13 @@
 \usage{
 purge_dataset_cache()
 }
+\value{
+None
+}
 \description{
 Delete cached data about TCGA datasets.
+}
+\examples{
+purge_dataset_cache()
+
 }

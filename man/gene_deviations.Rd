@@ -18,3 +18,11 @@ A table of deviations, with columns \code{sample} and
 \description{
 Compute deviations of gene expression for reference levels.
 }
+\examples{
+library(airway)
+data(airway)
+counts <- assays(airway)$counts
+m <- gene_medians(counts)
+gene_deviations(counts, m)
+
+}

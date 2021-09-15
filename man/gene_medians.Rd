@@ -15,3 +15,9 @@ A named vector with gene medians.
 \description{
 Compute median expression levels for all genes.
 }
+\examples{
+library(airway)
+data(airway)
+gene_medians(assays(airway)$counts)
+
+}

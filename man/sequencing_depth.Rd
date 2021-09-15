@@ -15,3 +15,9 @@ An integer vector, holding the sequencing depth for each sample.
 \description{
 Compute the per-sample sequencing depth.
 }
+\examples{
+library(airway)
+data(airway)
+sequencing_depth(assays(airway)$counts)
+
+}

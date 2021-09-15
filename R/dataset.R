@@ -106,6 +106,11 @@ simplify_rowdata <- function(se) {
 
 #' Delete cached data about TCGA datasets.
 #'
+#' @return None
+#'
+#' @examples
+#' purge_dataset_cache()
+#'
 #' @export
 #'
 purge_dataset_cache <- function() {

@@ -13,6 +13,6 @@ A data.frame containing disease abbreviations and descriptions.
 Retrieve information about diseases.
 }
 \examples{
- dplyr::filter(list_diseases(), abbreviation == "LUAD")
+dplyr::filter(list_diseases(), abbreviation == "LUAD")
 
 }

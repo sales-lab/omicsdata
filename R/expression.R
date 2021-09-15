@@ -6,6 +6,11 @@
 #'                 ignore the entire profile.
 #' @return A selection of rows from the input matrix.
 #'
+#' @examples
+#' library(airway)
+#' data(airway)
+#' most_variable_profiles(assays(airway)$counts)
+#'
 #' @export
 #'
 most_variable_profiles <- function(expression, n = 100L, cut_mean = 100) {
@@ -30,6 +35,11 @@ most_variable_profiles <- function(expression, n = 100L, cut_mean = 100) {
 #' @param counts The count matrix.
 #' @return An integer vector, holding the sequencing depth for each sample.
 #'
+#' @examples
+#' library(airway)
+#' data(airway)
+#' sequencing_depth(assays(airway)$counts)
+#'
 #' @export
 #'
 sequencing_depth <- function(counts) {
@@ -43,6 +53,11 @@ sequencing_depth <- function(counts) {
 #' @param counts The raw count matrix.
 #' @return Trasformed counts.
 #'
+#' @examples
+#' library(airway)
+#' data(airway)
+#' normalize_by_depth(assays(airway)$counts)
+#'
 #' @export
 #'
 normalize_by_depth <- function(counts) {
@@ -54,6 +69,11 @@ normalize_by_depth <- function(counts) {
 #'
 #' @param expr The expression matrix.
 #' @return A named vector with gene medians.
+#'
+#' @examples
+#' library(airway)
+#' data(airway)
+#' gene_medians(assays(airway)$counts)
 #'
 #' @export
 #'
@@ -68,6 +88,13 @@ gene_medians <- function(expr) {
 #' @param reference_levels A vector with a reference level for each gene.
 #' @return A table of deviations, with columns \code{sample} and
 #'         \code{deviation}.
+#'
+#' @examples
+#' library(airway)
+#' data(airway)
+#' counts <- assays(airway)$counts
+#' m <- gene_medians(counts)
+#' gene_deviations(counts, m)
 #'
 #' @export
 #'

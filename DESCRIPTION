@@ -28,4 +28,5 @@ Imports:
 biocViews: Homo_sapiens_Data, ReproducibleResearch, CancerData, ExpressionData
 RoxygenNote: 7.1.2
 Suggests:
+    airway,
     testthat (>= 2.1.0)

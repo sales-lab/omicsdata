@@ -20,3 +20,9 @@ A selection of rows from the input matrix.
 \description{
 Select the most abundant profiles from an expression matrix.
 }
+\examples{
+library(airway)
+data(airway)
+most_variable_profiles(assays(airway)$counts)
+
+}

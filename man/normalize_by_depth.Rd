@@ -15,3 +15,9 @@ Trasformed counts.
 \description{
 Normalize expression profiles by sequencing depth.
 }
+\examples{
+library(airway)
+data(airway)
+normalize_by_depth(assays(airway)$counts)
+
+}
