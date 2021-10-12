@@ -31,6 +31,8 @@ gdc_download <- function(disease, dest_dir, file_type) {
     project = glue("TCGA-", disease),
     data.category = "Gene expression",
     data.type = "Gene expression quantification",
+    platform = "Illumina HiSeq",
+    experimental.strategy = "RNA-Seq",
     sample.type = "Primary Tumor",
     file.type = file_type,
     legacy = TRUE
@@ -38,7 +40,7 @@ gdc_download <- function(disease, dest_dir, file_type) {
   if (is.null(query))
     abort(glue("no gene expression data for disease: {disease}"))
 
-  GDCdownload(query, directory = dest_dir)
+  GDCdownload(query, method = "api", directory = dest_dir)
   GDCprepare(remove_duplicates(query), directory = dest_dir)
 }
 
