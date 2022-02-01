@@ -12,18 +12,20 @@ fetch_tcga_dataset <- function(disease) {
 
   dest_dir <- file.path(rappdirs::user_cache_dir("omicsdata"), disease)
   prepared_path <- file.path(dest_dir, "prepared.rda")
-  if (file.exists(prepared_path)) {
-    se <- readRDS(prepared_path)
-  } else {
-    se <- harmonize_datasets(
-      list(gdc_download(disease, dest_dir, "results"),
-           gdc_download(disease, dest_dir, "normalized_results")),
-      c("raw_count", "normalized_count")
-    )
-    saveRDS(se, file = prepared_path)
-  }
+  if (file.exists(prepared_path))
+    return(readRDS(prepared_path))
 
-  se
+  if (dir.exists(dest_dir))
+    unlink(dest_dir, recursive = TRUE)
+
+  se <- harmonize_datasets(
+          list(gdc_download(disease, dest_dir, "results"),
+               gdc_download(disease, dest_dir, "normalized_results")),
+          c("raw_count", "normalized_count")
+        )
+  saveRDS(se, file = prepared_path)
+
+  return(se)
 }
 
 gdc_download <- function(disease, dest_dir, file_type) {

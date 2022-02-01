@@ -1,6 +1,6 @@
 Package: omicsdata
 Title: Support package for the "Omics Data" course
-Version: 0.6.0
+Version: 0.6.1
 Authors@R:
     person(given = "Gabriele",
            family = "Sales",
