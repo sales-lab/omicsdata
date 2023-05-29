@@ -36,8 +36,7 @@ gdc_download <- function(disease, dest_dir, file_type) {
     platform = "Illumina HiSeq",
     experimental.strategy = "RNA-Seq",
     sample.type = "Primary Tumor",
-    file.type = file_type,
-    legacy = TRUE
+    file.type = file_type
   )
   if (is.null(query))
     abort(glue("no gene expression data for disease: {disease}"))

@@ -1,6 +1,6 @@
 Package: omicsdata
 Title: Support package for the "Omics Data" course
-Version: 0.6.1
+Version: 0.6.2
 Authors@R:
     person(given = "Gabriele",
            family = "Sales",
@@ -27,7 +27,7 @@ Imports:
     rvest,
     gplots
 biocViews: Homo_sapiens_Data, ReproducibleResearch, CancerData, ExpressionData
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Suggests:
     airway,
     testthat (>= 2.1.0)
