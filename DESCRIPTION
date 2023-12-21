@@ -24,10 +24,11 @@ Imports:
     tibble,
     matrixStats,
     assertthat,
-    rvest,
-    gplots
-biocViews: Homo_sapiens_Data, ReproducibleResearch, CancerData, ExpressionData
-RoxygenNote: 7.2.3
+    rvest
 Suggests:
     airway,
     testthat (>= 2.1.0)
+URL: https://github.com/sales-lab/omicsdata
+BugReports: https://github.com/sales-lab/omicsdata/issues
+biocViews: Homo_sapiens_Data, ReproducibleResearch, CancerData, ExpressionData
+RoxygenNote: 7.2.3
