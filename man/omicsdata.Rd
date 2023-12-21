@@ -8,6 +8,14 @@
 \description{
 Collection of utility functions and data to be used in the "Omics Data" course.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/sales-lab/omicsdata}
+  \item Report bugs at \url{https://github.com/sales-lab/omicsdata/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Gabriele Sales \email{gabriele.sales@unipd.it} (\href{https://orcid.org/0000-0003-2078-5661}{ORCID})
 

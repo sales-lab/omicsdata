@@ -107,5 +107,5 @@ gene_deviations <- function(expr, reference_levels) {
 
   as.data.frame(expr) %>%
     utils::stack() %>%
-    select(sample = .data$ind, deviation = .data$values)
+    select(sample = "ind", deviation = "values")
 }

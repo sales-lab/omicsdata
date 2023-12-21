@@ -13,8 +13,8 @@ list_diseases <- function() {
     rvest::html_element("#main-wrapper table") %>%
     rvest::html_table() %>%
     select(
-      abbreviation = .data$`Study Abbreviation`,
-      description = .data$`Study Name`
+      abbreviation = "Study Abbreviation",
+      description = "Study Name"
     ) %>%
     filter(!(.data$abbreviation %in% c("CNTL", "FPPP", "MISC")))
 }
