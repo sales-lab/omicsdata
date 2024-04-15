@@ -10,7 +10,7 @@
 list_diseases <- function() {
   url <- "https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations"
   rvest::read_html(url) %>%
-    rvest::html_element("#main-wrapper table") %>%
+    rvest::html_element("#main table") %>%
     rvest::html_table() %>%
     select(
       abbreviation = "Study Abbreviation",

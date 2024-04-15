@@ -2,8 +2,8 @@
 % Please edit documentation in R/zzz.R
 \docType{package}
 \name{omicsdata}
-\alias{omicsdata}
 \alias{omicsdata-package}
+\alias{omicsdata}
 \title{Support package for the "Omics Data" course.}
 \description{
 Collection of utility functions and data to be used in the "Omics Data" course.
